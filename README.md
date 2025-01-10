@@ -12,5 +12,5 @@ ng serve
 ```
 
 ```
-json-server --watch app/db.json
+json-server --watch mock/db.json
 ```
