@@ -7,8 +7,8 @@ npm install -g json-server
 ```
 
 ```
-cd app
-ng serve
+cd demo-app
+ng serve --open
 ```
 
 ```
