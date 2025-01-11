@@ -29,3 +29,9 @@ VS Code Editor settings:
         "editor.formatOnSave": true
     }
 ```
+
+PrimeNG:
+https://primeng.org/
+with
+Tailwind CSS:
+https://tailwindcss.com/docs/guides/angular
