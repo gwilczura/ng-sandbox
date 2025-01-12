@@ -1,0 +1,36 @@
+name: build and test demo app
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    name: Hello
+    steps:
+      - name: Hello
+        run: echo Hello
+
+  test-and-build:
+    runs-on: ubuntu-latest
+    name: test and build
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: install
+        working-directory: ./demo-app
+        run: npm ci
+
+      - name: run tests
+        working-directory: ./demo-app
+        run: npm test
+
+      - name: build application
+        working-directory: ./demo-app
+        run: npm build
