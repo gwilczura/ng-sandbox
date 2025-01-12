@@ -29,8 +29,8 @@ jobs:
 
       - name: run tests
         working-directory: ./demo-app
-        run: npm test
+        run: npm run test:ci
 
       - name: build application
         working-directory: ./demo-app
-        run: npm build
+        run: npm run build
