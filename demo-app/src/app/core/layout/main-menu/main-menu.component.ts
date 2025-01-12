@@ -6,9 +6,9 @@ import { Menu } from 'primeng/menu';
 
 @Component({
   selector: 'app-main-menu',
+  standalone: true,
   imports: [CommonModule, Menu, RouterLink],
   templateUrl: './main-menu.component.html',
-  standalone: true,
   styleUrl: './main-menu.component.scss',
 })
 export class MainMenuComponent implements OnInit {

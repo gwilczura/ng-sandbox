@@ -32,6 +32,7 @@ VS Code Editor settings:
 
 PrimeNG:
 https://primeng.org/
-with
+PrimeIcons:
+https://primeng.org/icons
 Tailwind CSS:
 https://tailwindcss.com/docs/guides/angular

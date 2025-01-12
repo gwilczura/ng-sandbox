@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
-import { TestComponent } from './features/counterparty/test/test.component';
-import { LoginComponent } from './core/auth/login/login.component';
+import { AppLayoutComponent } from './core/layout/app-layout.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'test', component: TestComponent },
+  { path: '', component: AppLayoutComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: '/not-found' },
 ];
