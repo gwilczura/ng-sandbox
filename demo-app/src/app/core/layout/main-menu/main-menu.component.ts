@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { Menu } from 'primeng/menu';
 
 @Component({
   selector: 'app-main-menu',
   standalone: true,
-  imports: [CommonModule, Menu, RouterLink],
+  imports: [CommonModule, Menu],
   templateUrl: './main-menu.component.html',
   styleUrl: './main-menu.component.scss',
 })
