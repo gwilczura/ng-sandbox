@@ -32,7 +32,15 @@ VS Code Editor settings:
 
 PrimeNG:
 https://primeng.org/
+
 PrimeIcons:
 https://primeng.org/icons
+
 Tailwind CSS:
 https://tailwindcss.com/docs/guides/angular
+
+Karma and TRX
+```
+ng generate config karma
+npm install karma-trx-reporter --save-dev
+```
