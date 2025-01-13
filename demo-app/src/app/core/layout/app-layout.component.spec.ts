@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppLayoutComponent } from './app-layout.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 describe('AppLayoutComponent', () => {
   let component: AppLayoutComponent;
@@ -8,9 +9,9 @@ describe('AppLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppLayoutComponent]
-    })
-    .compileComponents();
+      imports: [AppLayoutComponent],
+      providers: [provideAnimationsAsync()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppLayoutComponent);
     component = fixture.componentInstance;

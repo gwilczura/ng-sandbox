@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppSidebarComponent } from './app-sidebar.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 describe('AppSidebarComponent', () => {
   let component: AppSidebarComponent;
@@ -8,9 +9,9 @@ describe('AppSidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppSidebarComponent]
-    })
-    .compileComponents();
+      imports: [AppSidebarComponent],
+      providers: [provideAnimationsAsync()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppSidebarComponent);
     component = fixture.componentInstance;

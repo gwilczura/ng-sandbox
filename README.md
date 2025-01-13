@@ -44,3 +44,8 @@ Karma and TRX
 ng generate config karma
 npm install karma-trx-reporter --save-dev
 ```
+
+Styling:
+https://primeflex.org/flex
+https://tailwindcss.com/docs/border-color
+https://developer.mozilla.org/en-US/docs/Web/CSS/display
