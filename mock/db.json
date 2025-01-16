@@ -1,22 +1,26 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username": "greg",
-            "password": "1234"
-        }
-    ],
-    "counterparties": [
-        {
-            "id": 1,
-            "shortName": "Super Company",
-            "longName": "Super Company but Very Limited"
-        },
-        {
-            "id": 2,
-            "shortName": "Average Company",
-            "longName": "Average Company but Very Cool"
-        }
-
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "greg",
+      "password": "1234"
+    }
+  ],
+  "sessions": [
+    {
+      "id": 1,
+      "name": "session 1",
+      "date": "2024-05-07"
+    },
+    {
+      "id": 2,
+      "name": "session 2",
+      "date": "2024-06-07"
+    },
+    {
+      "id": 3,
+      "name": "session 3",
+      "date": "2024-07-07"
+    }
+  ]
 }

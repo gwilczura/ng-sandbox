@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CounterpartyService } from './counterparty.service';
+import { SessionService } from './session.service';
 
-describe('CounterpartyService', () => {
-  let service: CounterpartyService;
+describe('SessionService', () => {
+  let service: SessionService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CounterpartyService);
+    service = TestBed.inject(SessionService);
   });
 
   it('should be created', () => {

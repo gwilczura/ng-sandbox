@@ -10,7 +10,6 @@ export class AuthService {
 
   constructor(private appConfigService: AppConfigService) {
     this.url = appConfigService.getConfig().serverUrl ?? '';
-    console.log('url: ', this.url);
   }
 
   async loginUser(
