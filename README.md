@@ -52,3 +52,6 @@ https://primeflex.org/flex
 https://tailwindcss.com/docs/border-color
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/display
+
+Forms:
+https://angular.dev/guide/forms/dynamic-forms

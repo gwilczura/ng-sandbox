@@ -18,7 +18,13 @@ export class AppSidebarComponent implements OnInit {
         label: 'Documents',
         items: [
           {
-            label: 'New',
+            label: 'Home',
+            routerLink: '/',
+            icon: 'pi pi-search',
+          },
+          {
+            label: 'Sessions',
+            routerLink: 'session',
             icon: 'pi pi-plus',
           },
           {

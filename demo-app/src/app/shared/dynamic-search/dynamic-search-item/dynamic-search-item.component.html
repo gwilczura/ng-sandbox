@@ -1,0 +1,6 @@
+<div class="pt-5 pb-2">
+  <p-floatlabel *ngIf="searchItem.type == searchItemType.TextBox">
+    <input class="w-full" type="text" pInputText [name]="searchItem.name" [id]="searchItem.id" />
+    <label [attr.for]="searchItem.id">{{ searchItem.label }}</label>
+  </p-floatlabel>
+</div>

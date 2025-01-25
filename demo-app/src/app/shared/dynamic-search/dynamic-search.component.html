@@ -1,0 +1,19 @@
+<form (ngSumbit)="onSubmit()" [formGroup]="form">
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 justify-items-stretch">
+    @for (searchItem of searchItems; track searchItem){
+    <app-dynamic-search-item
+      [searchItem]="searchItem"
+      [form]="form"
+    ></app-dynamic-search-item>
+    }
+  </div>
+</form>
+<p-toolbar>
+  <ng-template #start>
+    <p-button icon="pi pi-plus" class="mr-2" text severity="secondary" />
+  </ng-template>
+  <ng-template #center> </ng-template>
+  <ng-template #end>
+    <p-button label="Search" />
+  </ng-template>
+</p-toolbar>
