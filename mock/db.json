@@ -6,21 +6,63 @@
       "password": "1234"
     }
   ],
+  "persons": [
+    {
+      "id": 1,
+      "name": "Max Maximov"
+    },
+    {
+      "id": 2,
+      "name": "Don Donut"
+    },
+    {
+      "id": 3,
+      "name": "Mathilda Math"
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "name": "group 1"
+    },
+    {
+      "id": 2,
+      "name": "group 2"
+    },
+    {
+      "id": 2,
+      "name": "group 2"
+    }
+  ],
   "sessions": [
     {
       "id": 1,
       "name": "session 1",
-      "date": "2024-05-07"
+      "date": "2024-05-07 09:01"
     },
     {
       "id": 2,
       "name": "session 2",
-      "date": "2024-06-07"
+      "date": "2024-06-07 12:12"
     },
     {
       "id": 3,
       "name": "session 3",
-      "date": "2024-07-07"
+      "date": "2024-07-07 14:30"
     }
-  ]
+  ],
+  "votings": [
+    {
+      "id": 1,
+      "name": "Some decitions to be made"
+    },
+    {
+      "id": 2,
+      "name": "some other decision"
+    },
+    {
+      "id": 2,
+      "name": "even more decisions"
+    }
+  ] 
 }

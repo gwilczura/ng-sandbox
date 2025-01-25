@@ -1,22 +1,14 @@
 import { Injectable } from '@angular/core';
-import { AppConfigService } from '../../core/config/app-config.service';
 import { Session } from './session.model';
+import { HttpService } from '../../shared/http.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SessionService {
-  url = '';
-
-  constructor(private appConfigService: AppConfigService) {
-    this.url = appConfigService.getConfig().serverUrl ?? '';
-  }
+  constructor(private httpService: HttpService) {}
 
   async getSessionsAsync(): Promise<Session[] | undefined> {
-    const requestUrl = `${this.url}/sessions`;
-    const data = await fetch(requestUrl);
-
-    var result = (await data.json()) as Session[];
-    return result;
+    return await this.httpService.getAsync<Session>('/sessions');
   }
 }
