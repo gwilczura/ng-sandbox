@@ -10,4 +10,6 @@ export interface ISearchFilterItem {
   id: string;
   name: string;
   label: string;
+  isDefault: boolean;
+  isActive: boolean;
 }

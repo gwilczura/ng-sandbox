@@ -1,6 +1,21 @@
-<div class="pt-5 pb-2">
-  <p-floatlabel *ngIf="searchItem.type == searchItemType.TextBox">
-    <input class="w-full" type="text" pInputText [name]="searchItem.name" [id]="searchItem.id" />
-    <label [attr.for]="searchItem.id">{{ searchItem.label }}</label>
-  </p-floatlabel>
+<div class="pt-5 pb-2" [formGroup]="form">
+  <p-inputgroup>
+    <p-floatlabel *ngIf="searchItem.type == searchItemType.TextBox">
+      <input
+        class="w-full"
+        type="text"
+        pInputText
+        [name]="searchItem.name"
+        [id]="searchItem.id"
+        [formControlName]="searchItem.id"
+      />
+      <label [attr.for]="searchItem.id">{{ searchItem.label }}</label>
+    </p-floatlabel>
+    <p-inputgroup-addon>
+      <p-button icon="pi pi-times" severity="secondary" />
+    </p-inputgroup-addon>
+    <p-inputgroup-addon>
+      <p-button icon="pi pi-minus" severity="secondary" />
+    </p-inputgroup-addon>
+  </p-inputgroup>
 </div>

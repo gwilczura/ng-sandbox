@@ -9,6 +9,8 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 
 @Component({
   selector: 'app-dynamic-search-item',
@@ -23,6 +25,8 @@ import { IconFieldModule } from 'primeng/iconfield';
     InputIconModule,
     IconFieldModule,
     ReactiveFormsModule,
+    InputGroupModule,
+    InputGroupAddonModule,
   ],
   templateUrl: './dynamic-search-item.component.html',
   styleUrl: './dynamic-search-item.component.scss',

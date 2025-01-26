@@ -1,15 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppTopbarComponent } from './app-topbar/app-topbar.component';
 import { AppSidebarComponent } from './app-sidebar/app-sidebar.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
+import { MenuItem } from 'primeng/api';
+import { MenubarModule } from 'primeng/menubar';
 
 @Component({
   selector: 'app-app-layout',
   standalone: true,
   imports: [
     CommonModule,
+    MenubarModule,
     RouterModule,
     AppTopbarComponent,
     AppSidebarComponent,
@@ -18,4 +21,9 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
   templateUrl: './app-layout.component.html',
   styleUrl: './app-layout.component.scss',
 })
-export class AppLayoutComponent {}
+export class AppLayoutComponent implements OnInit {
+  items: MenuItem[] | undefined;
+  ngOnInit(): void {
+    this.items = [{ label: 'Page Header' }];
+  }
+}

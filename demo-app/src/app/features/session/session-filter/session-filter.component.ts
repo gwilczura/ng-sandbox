@@ -37,12 +37,32 @@ export class SessionFilterComponent implements OnInit {
       name: 'name',
       label: 'Name:',
       type: SearchItemType.TextBox,
+      isDefault: true,
+      isActive: true,
     },
     {
       id: 'other',
       name: 'other',
       label: 'Other:',
       type: SearchItemType.TextBox,
+      isDefault: true,
+      isActive: true,
+    },
+    {
+      id: 'description',
+      name: 'description',
+      label: 'Description:',
+      type: SearchItemType.TextBox,
+      isDefault: false,
+      isActive: false,
+    },
+    {
+      id: 'person',
+      name: 'person',
+      label: 'Person:',
+      type: SearchItemType.TextBox,
+      isDefault: false,
+      isActive: false,
     },
   ];
 

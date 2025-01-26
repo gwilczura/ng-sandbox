@@ -1,9 +1,12 @@
-<div class="container">
-    <app-app-topbar></app-app-topbar>
-    <div class="flex">
-        <app-app-sidebar></app-app-sidebar>
-        
-        <div class="container"><router-outlet></router-outlet></div>
+<div class="w-full">
+  <app-app-topbar></app-app-topbar>
+  <div class="flex">
+    <app-app-sidebar></app-app-sidebar>
+
+    <div class="w-full m-2">
+      <p-menubar [model]="items" />
+      <router-outlet></router-outlet>
     </div>
-    <app-app-footer></app-app-footer>
+  </div>
+  <app-app-footer></app-app-footer>
 </div>
