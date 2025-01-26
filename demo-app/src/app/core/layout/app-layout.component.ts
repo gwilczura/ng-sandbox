@@ -6,6 +6,8 @@ import { AppSidebarComponent } from './app-sidebar/app-sidebar.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
+import { PanelModule } from 'primeng/panel';
+import { MessageModule } from 'primeng/message';
 
 @Component({
   selector: 'app-app-layout',
@@ -14,6 +16,8 @@ import { MenubarModule } from 'primeng/menubar';
     CommonModule,
     MenubarModule,
     RouterModule,
+    PanelModule,
+    MessageModule,
     AppTopbarComponent,
     AppSidebarComponent,
     AppFooterComponent,

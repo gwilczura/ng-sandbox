@@ -4,7 +4,13 @@
     <app-app-sidebar></app-app-sidebar>
 
     <div class="w-full m-2">
-      <p-menubar [model]="items" />
+        <div>
+            <p-panel showHeader="false">
+                <div class="mt-4">
+                    <p-message variant="simple" size="large" severity="contrast">Page Header TODO</p-message>
+                </div>
+            </p-panel>
+        </div>
       <router-outlet></router-outlet>
     </div>
   </div>

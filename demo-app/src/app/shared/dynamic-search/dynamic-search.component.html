@@ -1,35 +1,57 @@
-<p-fieldset legend="Search" [toggleable]="true">
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 justify-items-stretch">
-      @for (searchItem of activeItems; track searchItem){
-      <app-dynamic-search-item
-        [searchItem]="searchItem"
-        [form]="form"
-      ></app-dynamic-search-item>
-      }
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div class="flex items-end">
+    <div class="flex-auto">
+      <p-fieldset
+        legend="Search"
+        [toggleable]="true"
+        (collapsedChange)="onSearchFieldsetChanged($event)"
+      >
+        <div
+          class="grid grid-cols-2 lg:grid-cols-3 gap-4 justify-items-stretch mt-2"
+        >
+          @for (searchItem of activeItems; track searchItem){
+          <app-dynamic-search-item
+            [searchItem]="searchItem"
+            [form]="form"
+            (onRemoveSearchItem)="onRemoveSearchItem($event)"
+          ></app-dynamic-search-item>
+          }
+        </div>
+        <div *ngIf="activeItems.length === 0" class="mb-2">
+          <p-message severity="info">No search filters specified.</p-message>
+        </div>
+        <p-toolbar>
+          <ng-template #start>
+            <span *ngIf="availableItems.length > 0">
+              <p-select
+                [(ngModel)]="selectedItem"
+                [ngModelOptions]="{ standalone: true }"
+                [options]="availableItems"
+                placeholder="Add more filters"
+                optionLabel="label"
+              />
+              <p-button
+                icon="pi pi-plus"
+                (onClick)="addSearchFilerItem()"
+                class="mr-2"
+                text
+                severity="secondary"
+              />
+            </span>
+            <span *ngIf="availableItems.length === 0">
+              <p-message severity="info">All filters specified.</p-message>
+            </span>
+          </ng-template>
+          <ng-template #center> </ng-template>
+          <ng-template #end>
+            <p-button label="Reset filters" type="button" (onClick)="resetFilters()" class="mr-2" variant="outlined" />
+            <p-button label="Search" [disabled]="!form.valid" type="submit" />
+          </ng-template>
+        </p-toolbar>
+      </p-fieldset>
     </div>
-    <p-toolbar>
-      <ng-template #start>
-        <p-select
-          [(ngModel)]="selectedItem"
-          [ngModelOptions]="{ standalone: true }"
-          [options]="availableItems"
-          placeholder="Add filter..."
-          optionLabel="label"
-          class="w-200"
-        />
-        <p-button
-          icon="pi pi-plus"
-          (onClick)="addSearchFilerItem()"
-          class="mr-2"
-          text
-          severity="secondary"
-        />
-      </ng-template>
-      <ng-template #center> </ng-template>
-      <ng-template #end>
-        <p-button label="Search" [disabled]="!form.valid" type="submit" />
-      </ng-template>
-    </p-toolbar>
-  </form>
-</p-fieldset>
+    <div *ngIf="isCollapsed" class="ml-2 pt-2">
+      <p-button label="Search" [disabled]="!form.valid" type="submit" />
+    </div>
+  </div>
+</form>

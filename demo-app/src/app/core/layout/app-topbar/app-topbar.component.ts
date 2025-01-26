@@ -12,6 +12,6 @@ import { MenubarModule } from 'primeng/menubar';
 export class AppTopbarComponent implements OnInit {
   items: MenuItem[] | undefined;
   ngOnInit(): void {
-    this.items = [{ label: 'Hello' }];
+    this.items = [{ label: 'Header' }];
   }
 }

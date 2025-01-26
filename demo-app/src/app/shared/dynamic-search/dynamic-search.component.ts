@@ -17,6 +17,7 @@ import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
 import { FieldsetModule } from 'primeng/fieldset';
 import { SelectModule } from 'primeng/select';
+import { MessageModule } from 'primeng/message';
 
 @Component({
   selector: 'app-dynamic-search',
@@ -35,6 +36,7 @@ import { SelectModule } from 'primeng/select';
     InputIconModule,
     IconFieldModule,
     FieldsetModule,
+    MessageModule,
   ],
   templateUrl: './dynamic-search.component.html',
   styleUrl: './dynamic-search.component.scss',
@@ -44,36 +46,74 @@ export class DynamicSearchComponent implements OnInit {
   activeItems: ISearchFilterItem[] = [];
   availableItems: ISearchFilterItem[] = [];
   selectedItem: ISearchFilterItem | undefined;
-  form!: FormGroup;
+  isCollapsed: boolean = false;
+  form: FormGroup = new FormGroup([]);
+  formControls: { [key: string]: FormControl } = {};
 
   ngOnInit(): void {
+    this.initFormControls();
     this.setup();
   }
 
-  public addSearchFilerItem() {
+  addSearchFilerItem() {
     if (this.selectedItem) {
       this.selectedItem.isActive = true;
-      this.setup();
+      this.setup(this.selectedItem);
     }
+  }
+
+  resetFilters() {
+    this.searchItems.forEach((item) => {
+      item.isActive = item.isDefault;
+    });
+    this.setup();
   }
 
   onSubmit() {
     console.log(JSON.stringify(this.form.getRawValue()));
   }
 
-  setup(): void {
-    this.activeItems = this.searchItems.filter((si) => si.isActive === true);
+  onRemoveSearchItem(item: ISearchFilterItem) {
+    console.log(item);
+    item.isActive = false;
+    this.setup(item);
+  }
+
+  onSearchFieldsetChanged(value: boolean) {
+    this.isCollapsed = value;
+  }
+
+  setup(item?: ISearchFilterItem): void {
+    if (item) {
+      if (item.isActive) {
+        this.activeItems = this.activeItems.concat([item]);
+      } else {
+        this.activeItems = this.activeItems.filter(
+          (si) => si.isActive === true
+        );
+      }
+    } else {
+      this.activeItems = this.searchItems.filter((si) => si.isActive === true);
+    }
     this.availableItems = this.searchItems
       .filter((si) => si.isActive === false)
       .sort((a, b) => a.label.localeCompare(b.label));
-    this.form = this.toFormGroup(this.activeItems);
+    this.setupForm();
   }
 
-  toFormGroup(items: ISearchFilterItem[]) {
-    const group: any = {};
-    items.forEach((item) => {
-      group[item.id] = new FormControl('');
+  setupForm() {
+    this.searchItems.forEach((item) => {
+      if (item.isActive) {
+        this.form.addControl(item.id, this.formControls[item.id]);
+      } else {
+        this.form.removeControl(item.id);
+      }
     });
-    return new FormGroup(group);
+  }
+
+  initFormControls() {
+    this.searchItems.forEach((item) => {
+      this.formControls[item.id] = new FormControl('');
+    });
   }
 }

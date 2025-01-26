@@ -1,4 +1,10 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ISearchFilterItem, SearchItemType } from '../dynamic-search.model';
@@ -34,9 +40,20 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 export class DynamicSearchItemComponent {
   @Input() searchItem!: ISearchFilterItem;
   @Input() form!: FormGroup;
+  @Output() onRemoveSearchItem: EventEmitter<ISearchFilterItem> =
+    new EventEmitter();
+  @ViewChild('searchItemInput') searchItemInput: any;
   public searchItemType = SearchItemType;
 
   get isValid() {
     return this.form.controls[this.searchItem.id].valid;
+  }
+
+  clearData(): void {
+    this.form.get(this.searchItem.id)?.reset();
+  }
+  removeSearchItem(): void {
+    console.log(this.searchItem);
+    this.onRemoveSearchItem.emit(this.searchItem);
   }
 }
