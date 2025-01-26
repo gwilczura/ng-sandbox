@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from './session.service';
-import { Session } from './session.model';
+import { Item, Session } from './session.model';
 import { SessionListComponent } from './session-list/session-list.component';
 import { SessionFilterComponent } from './session-filter/session-filter.component';
 
@@ -14,12 +14,12 @@ import { SessionFilterComponent } from './session-filter/session-filter.componen
   </div>`,
 })
 export class SessionComponent implements OnInit {
-  sessionList: Session[];
+  sessionList: Item[];
   constructor(private sessionService: SessionService) {
     this.sessionList = [];
   }
 
   async ngOnInit(): Promise<void> {
-    this.sessionList = (await this.sessionService.getSessionsAsync()) ?? [];
+    this.sessionList = (await this.sessionService.getItemsAsync()) ?? [];
   }
 }

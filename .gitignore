@@ -6,6 +6,7 @@
 /out-tsc
 /bazel-out
 test_out
+local-data.json
 
 # Node
 /node_modules

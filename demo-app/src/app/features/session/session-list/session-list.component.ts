@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Session } from '../session.model';
+import { Item, Session } from '../session.model';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
@@ -14,5 +14,5 @@ import { Panel, PanelModule } from 'primeng/panel';
   styleUrl: './session-list.component.scss',
 })
 export class SessionListComponent {
-  @Input() sessionList!: Session[];
+  @Input() sessionList!: Item[];
 }
