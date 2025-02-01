@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { SplitButtonModule } from 'primeng/splitbutton';
@@ -31,10 +31,12 @@ import { DynamicSearchComponent } from '../../../shared/dynamic-search/dynamic-s
   styleUrl: './session-filter.component.scss',
 })
 export class SessionFilterComponent implements OnInit {
+  @Output() onSearch: EventEmitter<any> = new EventEmitter();
+
   searchItems: ISearchFilterItem[] = [
     {
-      id: 'group',
-      name: 'group',
+      id: 'groupName',
+      name: 'groupName',
       label: 'Group',
       type: SearchItemType.TextBox,
       isDefault: true,
@@ -83,4 +85,8 @@ export class SessionFilterComponent implements OnInit {
   ];
 
   ngOnInit() {}
+
+  onSearchHandler(data: any) {
+    this.onSearch.emit(data);
+  }
 }

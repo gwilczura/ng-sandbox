@@ -53,7 +53,6 @@ export class DynamicSearchItemComponent {
     this.form.get(this.searchItem.id)?.reset();
   }
   removeSearchItem(): void {
-    console.log(this.searchItem);
     this.onRemoveSearchItem.emit(this.searchItem);
   }
 }

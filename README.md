@@ -30,14 +30,19 @@ VS Code Editor settings:
     }
 ```
 
+Forms:
+https://angular.dev/guide/forms/dynamic-forms
+
 PrimeNG:
 https://primeng.org/
+https://primeng.org/treeselect
 
 PrimeIcons:
 https://primeng.org/icons
 
 Tailwind CSS:
 https://tailwindcss.com/docs/guides/angular
+https://tailwindcss.com/docs/align-items
 
 Karma and TRX
 ```

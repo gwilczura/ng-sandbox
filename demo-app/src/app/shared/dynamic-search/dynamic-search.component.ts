@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -43,6 +43,7 @@ import { MessageModule } from 'primeng/message';
 })
 export class DynamicSearchComponent implements OnInit {
   @Input() searchItems: ISearchFilterItem[] = [];
+  @Output() onSearch: EventEmitter<any> = new EventEmitter();
   activeItems: ISearchFilterItem[] = [];
   availableItems: ISearchFilterItem[] = [];
   selectedItem: ISearchFilterItem | undefined;
@@ -70,11 +71,10 @@ export class DynamicSearchComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(JSON.stringify(this.form.getRawValue()));
+    this.onSearch.emit(this.form.getRawValue());
   }
 
   onRemoveSearchItem(item: ISearchFilterItem) {
-    console.log(item);
     item.isActive = false;
     this.setup(item);
   }

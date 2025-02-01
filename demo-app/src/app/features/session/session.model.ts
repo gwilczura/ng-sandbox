@@ -14,14 +14,3 @@ export interface Item {
   date: string;
   hour: string;
 }
-
-export interface ServerItem {
-  Vote: string;
-  Person: string;
-  Category: string;
-  Name: string;
-  GroupName: string;
-  Description: string;
-  Date: string;
-  Hour: string;
-}

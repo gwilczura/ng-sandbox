@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Item, ServerItem, Session } from './session.model';
+import { Item, Session } from './session.model';
 import { HttpService } from '../../shared/http.service';
+import { IQuery, IResponse } from '../../shared/shared.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,21 +12,16 @@ export class SessionService {
   async getSessionsAsync(): Promise<Session[] | undefined> {
     return await this.httpService.getAsync<Session>('/sessions');
   }
-  async getItemsAsync(): Promise<Item[] | undefined> {
+  async getItemsAsync(params: IQuery): Promise<IResponse<Item>> {
     // sessions
-    var x = await this.httpService.getAsync<ServerItem>('/items');
-    return x?.map(
-      (a) =>
-        ({
-          category: a.Category,
-          date: a.Date,
-          description: a.Description,
-          groupName: a.GroupName,
-          hour: a.Hour,
-          name: a.Name,
-          person: a.Person,
-          vote: a.Vote,
-        } as Item)
+    const validParams = Object.entries(params).filter(
+      (p) => !(p[1] === undefined || p[1] === null || p[1] === '')
     );
+    const query = new URLSearchParams(validParams);
+    const queryString = query.toString();
+    var x = await this.httpService.getResponseAsync<Item>(
+      `/votingdata?${queryString}`
+    );
+    return x;
   }
 }

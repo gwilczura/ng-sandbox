@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { Item, Session } from '../session.model';
+import { Item } from '../session.model';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
-import { Panel, PanelModule } from 'primeng/panel';
+import { PanelModule } from 'primeng/panel';
+import { IResponse } from '../../../shared/shared.model';
 
 @Component({
   selector: 'app-session-list',
@@ -14,5 +15,5 @@ import { Panel, PanelModule } from 'primeng/panel';
   styleUrl: './session-list.component.scss',
 })
 export class SessionListComponent {
-  @Input() sessionList!: Item[];
+  @Input() response!: IResponse<Item>;
 }
