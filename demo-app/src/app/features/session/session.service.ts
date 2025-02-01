@@ -13,14 +13,9 @@ export class SessionService {
     return await this.httpService.getAsync<Session>('/sessions');
   }
   async getItemsAsync(params: IQuery): Promise<IResponse<Item>> {
-    // sessions
-    const validParams = Object.entries(params).filter(
-      (p) => !(p[1] === undefined || p[1] === null || p[1] === '')
-    );
-    const query = new URLSearchParams(validParams);
-    const queryString = query.toString();
     var x = await this.httpService.getResponseAsync<Item>(
-      `/votingdata?${queryString}`
+      `/votingdata`,
+      params
     );
     return x;
   }

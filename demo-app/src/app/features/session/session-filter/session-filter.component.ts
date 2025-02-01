@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { SplitButtonModule } from 'primeng/splitbutton';
@@ -12,6 +12,7 @@ import {
   SearchItemType,
 } from '../../../shared/dynamic-search/dynamic-search.model';
 import { DynamicSearchComponent } from '../../../shared/dynamic-search/dynamic-search.component';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-session-filter',
@@ -31,6 +32,8 @@ import { DynamicSearchComponent } from '../../../shared/dynamic-search/dynamic-s
   styleUrl: './session-filter.component.scss',
 })
 export class SessionFilterComponent implements OnInit {
+  @Input() form: FormGroup = new FormGroup([]);
+  @Input() loading: boolean = false;
   @Output() onSearch: EventEmitter<any> = new EventEmitter();
 
   searchItems: ISearchFilterItem[] = [
@@ -61,7 +64,7 @@ export class SessionFilterComponent implements OnInit {
     {
       id: 'name',
       name: 'name',
-      label: 'Name',
+      label: 'Voting Name',
       type: SearchItemType.TextBox,
       isDefault: false,
       isActive: false,

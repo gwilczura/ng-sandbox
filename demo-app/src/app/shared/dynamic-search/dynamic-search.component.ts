@@ -43,12 +43,12 @@ import { MessageModule } from 'primeng/message';
 })
 export class DynamicSearchComponent implements OnInit {
   @Input() searchItems: ISearchFilterItem[] = [];
+  @Input() form: FormGroup = new FormGroup([]);
   @Output() onSearch: EventEmitter<any> = new EventEmitter();
   activeItems: ISearchFilterItem[] = [];
   availableItems: ISearchFilterItem[] = [];
   selectedItem: ISearchFilterItem | undefined;
   isCollapsed: boolean = false;
-  form: FormGroup = new FormGroup([]);
   formControls: { [key: string]: FormControl } = {};
 
   ngOnInit(): void {
