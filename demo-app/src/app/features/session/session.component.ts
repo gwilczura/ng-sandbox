@@ -5,7 +5,6 @@ import { Item } from './session.model';
 import { SessionListComponent } from './session-list/session-list.component';
 import { SessionFilterComponent } from './session-filter/session-filter.component';
 import { FormGroup } from '@angular/forms';
-import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-session',
@@ -58,7 +57,6 @@ export class SessionComponent implements OnInit {
       ...query,
     };
     console.log(searchParams);
-    //await new Promise((f) => setTimeout(f, 2000));
     this.response =
       (await this.sessionService.getItemsAsync(searchParams)) ?? [];
     this.loading = false;

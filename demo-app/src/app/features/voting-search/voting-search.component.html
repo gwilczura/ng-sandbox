@@ -1,0 +1,13 @@
+<div>
+  <app-voting-search-filter
+    (onSearch)="onSearchHandler($event)"
+    [form]="formForFilter"
+    [loading]="loading"
+  />
+  <app-voting-search-list
+    (onPage)="onPageHandler($event)"
+    [query]="query"
+    [response]="response"
+    [loading]="loading"
+  />
+</div>

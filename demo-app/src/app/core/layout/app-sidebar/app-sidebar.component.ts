@@ -15,7 +15,7 @@ export class AppSidebarComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'Documents',
+        label: 'Voting',
         items: [
           {
             label: 'Home',
@@ -29,6 +29,7 @@ export class AppSidebarComponent implements OnInit {
           },
           {
             label: 'Search',
+            routerLink: 'voting-search',
             icon: 'pi pi-search',
           },
         ],

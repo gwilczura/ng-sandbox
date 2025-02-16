@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SessionFilterComponent } from './session-filter.component';
+import { VotingSearchFilterComponent } from './voting-search-filter.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
-describe('SessionFilterComponent', () => {
-  let component: SessionFilterComponent;
-  let fixture: ComponentFixture<SessionFilterComponent>;
+describe('VotingSearchFilterComponent', () => {
+  let component: VotingSearchFilterComponent;
+  let fixture: ComponentFixture<VotingSearchFilterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SessionFilterComponent],
+      imports: [VotingSearchFilterComponent],
       providers: [provideAnimationsAsync()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SessionFilterComponent);
+    fixture = TestBed.createComponent(VotingSearchFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
