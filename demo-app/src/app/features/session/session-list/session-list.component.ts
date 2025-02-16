@@ -6,7 +6,6 @@ import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { PanelModule } from 'primeng/panel';
 import { IQuery, IResponse } from '../../../shared/shared.model';
-import { trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-session-list',

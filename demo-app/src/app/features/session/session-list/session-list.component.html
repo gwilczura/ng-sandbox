@@ -27,8 +27,8 @@
   <ng-template #header>
     <tr>
       <th>Group</th>
-      <th>Description</th>
-      <th>Voting Name</th>
+      <th>Session</th>
+      <th>Voting</th>
       <th>Date</th>
       <th>Hour</th>
       <th>Person</th>
@@ -38,8 +38,8 @@
   <ng-template #body let-sessionItem>
     <tr>
       <td>{{ sessionItem.groupName }}</td>
-      <td>{{ sessionItem.description }}</td>
-      <td>{{ sessionItem.name }}</td>
+      <td>{{ sessionItem.sessionName }}</td>
+      <td>{{ sessionItem.votingName }}</td>
       <td>{{ sessionItem.date }}</td>
       <td>{{ sessionItem.hour }}</td>
       <td>{{ sessionItem.person }}</td>

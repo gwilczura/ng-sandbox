@@ -12,6 +12,7 @@ export class SessionService {
   async getSessionsAsync(): Promise<Session[] | undefined> {
     return await this.httpService.getAsync<Session>('/sessions');
   }
+
   async getItemsAsync(params: IQuery): Promise<IResponse<Item>> {
     var x = await this.httpService.getResponseAsync<Item>(
       `/votingdata`,
