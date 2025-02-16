@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SessionListComponent } from './session-list.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 describe('SessionListComponent', () => {
   let component: SessionListComponent;
@@ -8,9 +9,9 @@ describe('SessionListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SessionListComponent]
-    })
-    .compileComponents();
+      imports: [SessionListComponent],
+      providers: [provideAnimationsAsync()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SessionListComponent);
     component = fixture.componentInstance;

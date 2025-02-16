@@ -5,7 +5,7 @@ import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { PanelModule } from 'primeng/panel';
-import { IQuery, IResponse } from '../../../shared/shared.model';
+import { GetEmptyResponse, IQuery } from '../../../shared/shared.model';
 
 @Component({
   selector: 'app-session-list',
@@ -15,11 +15,18 @@ import { IQuery, IResponse } from '../../../shared/shared.model';
   styleUrl: './session-list.component.scss',
 })
 export class SessionListComponent {
-  @Input() response!: IResponse<Item>;
-  @Input() query!: IQuery;
+  @Input() response;
+  @Input() query;
   @Input() loading: boolean = false;
   @Output() onPage: EventEmitter<IQuery> = new EventEmitter();
 
+  constructor() {
+    this.response = GetEmptyResponse<Item>();
+    this.query = {
+      page: 0,
+      pageSize: 25,
+    };
+  }
   getFirst() {
     return this.query.page * this.query.pageSize;
   }
