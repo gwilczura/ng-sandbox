@@ -1,4 +1,5 @@
 {
     "title":"Statistics Site",
-    "serverUrl":"https://localhost:7070"
+    "serverUrl":"https://localhost:7070",
+    "version": "1.0.1.1"
 }

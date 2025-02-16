@@ -14,6 +14,7 @@ import Aura from '@primeng/themes/aura';
 
 export async function initConfig(appConfigService: AppConfigService) {
   await appConfigService.loadConfig();
+  await appConfigService.loadServerConfig();
 }
 
 export const appConfig: ApplicationConfig = {

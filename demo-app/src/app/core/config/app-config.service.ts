@@ -6,17 +6,25 @@ import { AppConfig } from '../../shared/config/app-config.model';
 })
 export class AppConfigService {
   private config: AppConfig = {};
+  private serverVersion: string = '';
 
   constructor() {}
 
   async loadConfig(): Promise<void> {
     const data = await fetch('/app.config.json');
-    console.log(data);
     this.config = await data.json();
-    console.log(this.config);
+  }
+
+  async loadServerConfig(): Promise<void> {
+    const data = await fetch(`${this.config.serverUrl}/version`);
+    this.serverVersion = await data.text();
   }
 
   getConfig(): AppConfig {
     return this.config;
+  }
+
+  gerServerVersion(): string {
+    return this.serverVersion;
   }
 }

@@ -5,8 +5,9 @@
 /tmp
 /out-tsc
 /bazel-out
-test_out
 local-data.json
+/demo-app/test_out
+/demo-app/dist
 
 # Node
 /node_modules
