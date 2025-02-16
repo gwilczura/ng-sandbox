@@ -9,10 +9,15 @@ export const routes: Routes = [
   {
     path: '',
     component: AppLayoutComponent,
+    title: 'Layout',
     children: [
       { path: '', component: TestComponent },
       { path: 'session', component: SessionComponent },
-      { path: 'voting-search', component: VotingSearchComponent },
+      {
+        path: 'voting-search',
+        component: VotingSearchComponent,
+        title: 'Voting Search',
+      },
     ],
   },
   { path: 'not-found', component: NotFoundComponent },

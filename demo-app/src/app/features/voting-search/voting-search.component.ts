@@ -45,7 +45,6 @@ export class VotingSearchComponent implements OnInit {
       ...filter,
       ...query,
     };
-    console.log(searchParams);
     this.response =
       (await this.votingSearchService.getItemsAsync(searchParams)) ?? [];
     this.loading = false;

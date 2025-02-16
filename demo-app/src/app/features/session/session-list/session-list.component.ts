@@ -34,11 +34,8 @@ export class SessionListComponent {
   loadData(event: any, isButtonCliecked: boolean) {
     this.query.page = event.first / event.rows;
     this.query.pageSize = event.rows;
-    console.log('loadData');
     this.onPage.emit(this.query);
   }
 
-  pageChange(event: any) {
-    console.log('pageChange');
-  }
+  pageChange(event: any) {}
 }

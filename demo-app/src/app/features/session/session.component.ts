@@ -56,7 +56,6 @@ export class SessionComponent implements OnInit {
       ...filter,
       ...query,
     };
-    console.log(searchParams);
     this.response =
       (await this.sessionService.getItemsAsync(searchParams)) ?? [];
     this.loading = false;

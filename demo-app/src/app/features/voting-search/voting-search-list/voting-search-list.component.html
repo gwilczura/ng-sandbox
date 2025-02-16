@@ -23,13 +23,14 @@
   [showLoader]="true"
   [loading]="loading"
   [totalRecords]="response.totalCount"
+  [tableStyle]="{ 'min-width': '50rem' }"
 >
   <ng-template #header>
     <tr>
       <th>Group</th>
       <th>Session Name</th>
       <th>Voting Name</th>
-      <th>Date</th>
+      <th style="min-width: 120px;">Date</th>
       <th>Person</th>
       <th>Vote</th>
     </tr>

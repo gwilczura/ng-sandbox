@@ -13,6 +13,5 @@ export class LoginComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     const x = await this.authService.loginUser('greg', '1234');
-    console.log('Hello', x);
   }
 }
