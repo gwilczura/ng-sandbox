@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { AppLayoutComponent } from './core/layout/app-layout.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
-import { TestComponent } from './features/counterparty/test/test.component';
 import { SessionComponent } from './features/session/session.component';
 import { VotingSearchComponent } from './features/voting-search/voting-search.component';
+import { DummyComponent } from './shared/testing/dummy.component';
 
 export const routes: Routes = [
   {
@@ -11,8 +11,8 @@ export const routes: Routes = [
     component: AppLayoutComponent,
     title: 'Layout',
     children: [
-      { path: '', component: TestComponent },
-      { path: 'session', component: SessionComponent },
+      { path: '', component: DummyComponent },
+      { path: 'session', component: SessionComponent, title: 'Session Search' },
       {
         path: 'voting-search',
         component: VotingSearchComponent,
