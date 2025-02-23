@@ -18,18 +18,18 @@ export class AppSidebarComponent implements OnInit {
         label: 'Voting',
         items: [
           {
-            label: 'Home',
-            routerLink: '/',
-            icon: 'pi pi-search',
-          },
-          {
-            label: 'Sessions',
-            routerLink: 'session',
-            icon: 'pi pi-plus',
-          },
-          {
             label: 'Search',
             routerLink: 'voting-search',
+            icon: 'pi pi-search',
+          },
+        ],
+      },
+      {
+        label: 'Session',
+        items: [
+          {
+            label: 'Search',
+            routerLink: 'session-search',
             icon: 'pi pi-search',
           },
         ],

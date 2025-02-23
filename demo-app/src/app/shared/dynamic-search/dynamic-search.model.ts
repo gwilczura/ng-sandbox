@@ -12,4 +12,11 @@ export interface ISearchFilterItem {
   label: string;
   isDefault: boolean;
   isActive: boolean;
+  optionsName?: string;
+  options?: SelectItemData[];
+}
+
+export interface SelectItemData {
+  key: string;
+  value: string;
 }

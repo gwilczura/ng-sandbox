@@ -12,11 +12,33 @@
       />
       <label [attr.for]="searchItem.id">{{ searchItem.label }}</label>
     </p-floatlabel>
+    <p-float-label *ngIf="searchItem.type == searchItemType.Select">
+      <p-select
+        class="w-full"
+        [options]="selectOptions"
+        optionLabel="value"
+        optionValue="key"
+        [formControlName]="searchItem.id"
+        [name]="searchItem.name"
+        [id]="searchItem.id"
+      />
+      <label [attr.for]="searchItem.id">{{ searchItem.label }}</label>
+    </p-float-label>
     <p-inputgroup-addon>
-      <p-button type="button" (onClick)="clearData()" icon="pi pi-times" severity="secondary" />
+      <p-button
+        type="button"
+        (onClick)="clearData()"
+        icon="pi pi-times"
+        severity="secondary"
+      />
     </p-inputgroup-addon>
     <p-inputgroup-addon>
-      <p-button type="button" (onClick)="removeSearchItem()" icon="pi pi-minus" severity="secondary" />
+      <p-button
+        type="button"
+        (onClick)="removeSearchItem()"
+        icon="pi pi-minus"
+        severity="secondary"
+      />
     </p-inputgroup-addon>
   </p-inputgroup>
 </div>

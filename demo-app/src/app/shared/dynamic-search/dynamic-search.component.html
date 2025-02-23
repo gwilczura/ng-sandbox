@@ -12,6 +12,7 @@
           @for (searchItem of activeItems; track searchItem){
           <app-dynamic-search-item
             [searchItem]="searchItem"
+            [selectOptions]="searchItem.options"
             [form]="form"
             (onRemoveSearchItem)="onRemoveSearchItem($event)"
           ></app-dynamic-search-item>

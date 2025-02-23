@@ -12,7 +12,11 @@ export const routes: Routes = [
     title: 'Layout',
     children: [
       { path: '', component: DummyComponent },
-      { path: 'session', component: SessionComponent, title: 'Session Search' },
+      {
+        path: 'session-search',
+        component: SessionComponent,
+        title: 'Session Search',
+      },
       {
         path: 'voting-search',
         component: VotingSearchComponent,

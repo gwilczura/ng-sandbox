@@ -7,7 +7,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { DynamicSearchItemComponent } from './dynamic-search-item/dynamic-search-item.component';
-import { ISearchFilterItem } from './dynamic-search.model';
+import { ISearchFilterItem, SearchItemType } from './dynamic-search.model';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
@@ -113,7 +113,7 @@ export class DynamicSearchComponent implements OnInit {
 
   initFormControls() {
     this.searchItems.forEach((item) => {
-      this.formControls[item.id] = new FormControl('');
+      this.formControls[item.id] = new FormControl();
     });
   }
 }

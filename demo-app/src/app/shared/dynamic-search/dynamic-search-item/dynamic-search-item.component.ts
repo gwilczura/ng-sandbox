@@ -7,7 +7,11 @@ import {
 } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ISearchFilterItem, SearchItemType } from '../dynamic-search.model';
+import {
+  ISearchFilterItem,
+  SearchItemType,
+  SelectItemData,
+} from '../dynamic-search.model';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
@@ -17,6 +21,7 @@ import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { SelectModule } from 'primeng/select';
 
 @Component({
   selector: 'app-dynamic-search-item',
@@ -33,6 +38,7 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
     ReactiveFormsModule,
     InputGroupModule,
     InputGroupAddonModule,
+    SelectModule,
   ],
   templateUrl: './dynamic-search-item.component.html',
   styleUrl: './dynamic-search-item.component.scss',
@@ -40,6 +46,7 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 export class DynamicSearchItemComponent {
   @Input() searchItem!: ISearchFilterItem;
   @Input() form!: FormGroup;
+  @Input() selectOptions: SelectItemData[] | undefined;
   @Output() onRemoveSearchItem: EventEmitter<ISearchFilterItem> =
     new EventEmitter();
   @ViewChild('searchItemInput') searchItemInput: any;
